@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Tung App</title>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">   
+    <link href="css/style.css" rel="stylesheet" />
+    
+</head>
+<body ng-controller="myCtrl as ctrl"  ng-app="app">
+    <div id="container">
+        <div id="form-info">
+                
+
+
+            <fieldset style="text-align: left">
+                
+                <legend >
+                    add to do
+                </legend>
+                
+                <md-input-container class="md-block">
+                   
+                    <label style="text-align: left">Nhập công việc của bạn</label>         
+                    <input ng-model="name" type="text">
+                  </md-input-container>
+                 <md-datepicker ng-model="myDate" md-placeholder="Chọn ngày"></md-datepicker>
+                
+                    <md-select style="width:30%" ng-model="time" placeholder="Chọn Giờ">
+                    <md-option value="{{time}}" ng-repeat="time in times">{{time}}</md-option>
+                  </md-select>
+                  <div style="text-align: center"><md-button  class="md-raised md-primary" ng-click="save()">Lưu</md-button></div>
+            </fieldset>
+            
+        </div>
+        <div id="show-info">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Công việc</th>
+                        <th>Ngày</th>
+                        <th>Giờ</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="todo in todos" class="{{todo.nameClass}}">
+                        <td>{{todo.name}}</td>
+                        <td>{{todo.myDate | date : "dd-MM-yyyy"}}</td>
+                        <td>{{todo.time}}</td>
+                        <td><md-button ng-click="delete($index)" class="md-fab md-mini md-primary-red">X</md-button>   <input id="Checkbox1" type="checkbox" ng-click="complete($index)" /> <span>{{todo.stt}}</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-aria.min.js"></script>
+    <script src="https://gitcdn.link/repo/angular/bower-material/master/angular-material.js"></script>
+    <script src="scripts/app.js"></script>
+</body>
+</html>

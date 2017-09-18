@@ -1,0 +1,53 @@
+﻿body
+{
+    margin:0px;
+    padding:0px;
+    font-family:Arial;
+    background:#f6f6f6;
+}
+#container{
+    width:960px;
+    margin:0px auto;
+    min-height:500px;
+    background:white;
+    border:1px solid;
+}
+#form-info{
+    width:60%;
+    margin:0px auto;
+    min-height:100px;
+    border:1px solid;
+}
+#form-info fieldset{
+    text-align:center;
+}
+#form-info legend{
+    text-align:center;
+    font-weight:bold;
+    font-size:25px;
+    text-transform:uppercase;
+}
+#show-info{
+    margin-top:100px;
+    width:80%;
+    margin:0px auto;
+    min-height:300px;
+}
+#show-info table{
+    margin:0px auto;
+    width:100%;
+    border:1px solid;
+    text-align:center;
+}
+#show-info table tr td{
+    width:23%;
+    border:1px solid;
+    text-align:center;
+}
+.complete{
+    background-color:#0026ff;
+    color:white;
+}
+.complete input{
+    display:none;
+}
